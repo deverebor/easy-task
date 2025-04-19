@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
+import { UserComponent } from './user/user.component';
+import { DUMMY_USERS } from './mock-data/users';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [HeaderComponent, UserComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'easy-task';
+  users = DUMMY_USERS;
+
+  onSelectUser(id: string) {
+    console.log(id);
+  }
 }
